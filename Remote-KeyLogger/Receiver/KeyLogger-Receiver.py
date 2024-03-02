@@ -16,7 +16,7 @@ class RecvLogs:
             cmd = input("Enter Command: ")
             if cmd == "help":
                 print(f"\nCommands:\n logFile\n delete\n liveLogs [num]\n delete logfile\n")
-            if cmd == "logFile":
+            elif cmd == "logFile":
                 self.soc.sendall(cmd.encode())
                 recv = self.soc.recv(10240)
                 fl = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Logs.txt")
